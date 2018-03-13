@@ -6,7 +6,7 @@
 
 The output file produced, is a CSV file containing the headers checked for, and the hosts that responded - with their results. Runtime flags are included so you can customize what represents success in the fields and what does not.
 
-WatHeaders supports a configurable `hosts.json` file which allows you to add header `name` and `value` pairs to the array - supporting regex! So you can go through a list of hosts and determine if they respond with desired key:value pairings abiding by your supplied regex!
+watHeaders supports a configurable `headers.json` file which allows you to add header `name` and `value` pairs to the array - supporting regex! So you can go through a list of hosts and determine if they respond with desired key:value pairings abiding by your supplied regex.
 
 # Installation
 
