@@ -28,7 +28,7 @@ var (
 	hostsOpt    = flag.String("i", "", "Newline separated hosts file")
 	foundOpt    = flag.String("f", " ", "Output 'found' marking")
 	missingOpt  = flag.String("m", "X", "Output 'missing' marking")
-	timeoutOpt  = flag.Uint("r", 1, "Timeout for connections")
+	timeoutOpt  = flag.Uint("r", 3, "Timeout for connections")
 	headersOpt  = flag.String("l", "headers.json", "File containing headers")
 	caseSensOpt = flag.Bool("case-sensitive", false, "Case-sensitive string matching")
 
