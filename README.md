@@ -50,7 +50,7 @@ www.netgear.com,X,X, ,X,X,X,X,X
 
 # Screenshot
 
-<img src="https://i.imgur.com/wEab0I3.jpg">
+<img src="https://i.imgur.com/FjYmMqX.png">
 
 # To-Do
 
