@@ -6,6 +6,8 @@ It's the one thing pentesters hate doing.. collecting information regarding the 
 
 Why do it by hand when you can automate it? And in Go! 
 
+The output file produced, is a CSV file containing the headers checked for, and the hosts that responded - with their results. Runtime flags are included so you can customize what represents success in the fields and what does not.
+
 WatHeaders supports a configurable `hosts.json` file which allows you to add header `name` and `value` pairs to the array - supporting regex! So you can go through a list of hosts and determine if they respond with desired key:value pairings abiding by your supplied regex!
 
 # Installation
@@ -16,7 +18,7 @@ go get -u github.com/glen-mac/watHeaders
 
 # Usage
 
-`watHeaders -i subdomains.txt -o wat.out`
+`$ watHeaders -i targets.txt`
 
 ```
 Usage of ./watHeaders:
@@ -36,6 +38,14 @@ Usage of ./watHeaders:
         Timeout for connections (default 1)
   -t int
         Number of concurrent threads (default 10)
+```
+
+```
+$ cat wat.out
+
+Host,Strict-Transport-Security,Public-Key-Pins,Cache-Control,X-Frame-Options,X-XSS-Protection,X-Content-Type-Options,Content-Security-Policy,Referrer-Policy
+revoke.netgear.com,X,X,X,X,X,X,X,X
+www.netgear.com,X,X, ,X,X,X,X,X
 ```
 
 # Screenshot
