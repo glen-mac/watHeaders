@@ -2,7 +2,7 @@
 
 > Warning: code is horrible as I have only used this for personal use. When I get the time I will make it less-horrible (and faster).
 
-It's the one thing pentesters hate doing.. collecting information regarding the _best practice_ response headers provided by a particular host, or list of hosts. 
+*It's the one thing pentesters hate doing...* collecting information regarding the _best practice_ response headers provided by a particular host, or list of hosts. 
 
 Why do it by hand when you can automate it? And in Go! 
 
