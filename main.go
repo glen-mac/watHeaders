@@ -139,7 +139,7 @@ func main() {
 
 	/* handle required flags */
 	if *hostsOpt == "" {
-		fmt.Println("[!] Please supply an input file")
+		fmt.Println("[!] Please supply an input file\n")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
@@ -147,14 +147,18 @@ func main() {
 	/* open output file, create if needed */
 	outputHndl, err := os.Create(*outputOpt)
 	if err != nil {
-		panic("Failed to open output file")
+		fmt.Printf("[!] Failed to open output file: %s\n", *outputOpt)
+		flag.PrintDefaults()
+		os.Exit(1)
 	}
 
 	/* handle custom header file */
 	if *headersOpt != "" {
 		content, err := ioutil.ReadFile(*headersOpt)
 		if err != nil {
-			panic("Failed to open headers file")
+			fmt.Printf("[!] Failed to open headers file: %s\n", *headersOpt)
+			flag.PrintDefaults()
+			os.Exit(1)
 		}
 		err = json.Unmarshal(content, &headers)
 		if err != nil {
@@ -190,7 +194,9 @@ func main() {
 	/* open the file list */
 	hostList, err := os.Open(*hostsOpt)
 	if err != nil {
-		panic("Failed to open host list")
+		fmt.Printf("[!] Failed to open input file: %s\n", *hostsOpt)
+		flag.PrintDefaults()
+		os.Exit(1)
 	}
 	defer hostList.Close()
 	scannerH := bufio.NewScanner(hostList)
