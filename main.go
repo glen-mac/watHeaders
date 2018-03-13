@@ -24,9 +24,9 @@ type Header struct {
 var (
 	/* flags for program */
 	threadsOpt  = flag.Int("t", 10, "Number of concurrent threads")
-	outputOpt   = flag.String("o", "", "Output file")
+	outputOpt   = flag.String("o", "wat.out", "Output file")
 	hostsOpt    = flag.String("i", "", "Newline separated hosts file")
-	foundOpt    = flag.String("f", "", "Output 'found' marking")
+	foundOpt    = flag.String("f", " ", "Output 'found' marking")
 	missingOpt  = flag.String("m", "X", "Output 'missing' marking")
 	timeoutOpt  = flag.Uint("r", 1, "Timeout for connections")
 	headersOpt  = flag.String("l", "headers.json", "File containing headers")
@@ -138,7 +138,8 @@ func main() {
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 
 	/* handle required flags */
-	if *hostsOpt == "" || *outputOpt == "" {
+	if *hostsOpt == "" {
+		fmt.Println("[!] Please supply an input file")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
@@ -155,18 +156,10 @@ func main() {
 		if err != nil {
 			panic("Failed to open headers file")
 		}
-
-		fmt.Println("opening headers")
-
 		err = json.Unmarshal(content, &headers)
 		if err != nil {
 			panic(err)
 		}
-
-		for _, header := range headers {
-			fmt.Printf(">> %s -> %s\n", header.Key, header.Value)
-		}
-
 	}
 
 	/* input channel for hosts */
