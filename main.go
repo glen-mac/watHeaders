@@ -139,7 +139,7 @@ func main() {
 
 	/* handle required flags */
 	if *hostsOpt == "" {
-		fmt.Println("[!] Please supply an input file\n")
+		fmt.Println("[!] Please supply an input file")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
