@@ -2,9 +2,7 @@
 
 > Warning: code is horrible as I have only used this for personal use. When I get the time I will make it less-horrible (and faster).
 
-*It's the one thing pentesters hate doing...* collecting information regarding the _best practice_ response headers provided by a particular host, or list of hosts. 
-
-Why do it by hand when you can automate it? And in Go! 
+**It's the one thing pentesters hate doing...** collecting information regarding the _best practice_ response headers provided by a particular host, or list of hosts. 
 
 The output file produced, is a CSV file containing the headers checked for, and the hosts that responded - with their results. Runtime flags are included so you can customize what represents success in the fields and what does not.
 
