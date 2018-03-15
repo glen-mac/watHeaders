@@ -1,0 +1,34 @@
+[ 
+	{
+		"header": "Strict-Transport-Security",
+		"value": ".*"
+	},
+	{
+		"header": "Public-Key-Pins",
+		"value": ".*"
+	},
+	{
+		"header": "Cache-Control",
+		"value": ".*"
+	},
+	{
+		"header": "X-Frame-Options",
+		"value": ".*"
+	},
+	{
+		"header": "X-XSS-Protection",
+		"value": ".*"
+	},
+	{
+		"header": "X-Content-Type-Options",
+		"value": ".*"
+	},
+	{
+		"header": "Content-Security-Policy",
+		"value": ".*"
+	},
+	{
+		"header": "Referrer-Policy",
+		"value": ".*"
+	}
+]
